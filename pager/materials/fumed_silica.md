@@ -1,0 +1,11 @@
+## Fumed Silica
+
+**Material page name:** Fumed Silica
+
+**Hero Description:** Fumed silica is one of the lightest substances known, characterized for its fluffy, low-density texture. Also called pyrogenic silica or silicon dioxide, it is collected from the smoke of electric furnace operations used in producing silicon metal and alloys. Flexicon bulk material handling equipment is designed to transport, store, and process fumed silica efficiently and safely.
+
+**Overview:** Fumed silica is widely used as a universal thickening agent in industries ranging from construction and paints to personal care products like toothpaste and cosmetics. Its applications span sidewalks and foundations to printed materials and even pet litter boxes. Produced by collecting the smoke from electric furnaces processing quartz, coal, and wood chips, fumed silica combines versatility with unique physical properties. Extremely light and slightly abrasive, it is also valued for its light-diffusing qualities.
+
+**Characteristics and Challenges:** Fumed silica has an extremely low bulk density of around 3 lbs/cu ft (38 kg/cu m), making it one of the lightest and fluffiest powders used in industry. It possesses a very high surface area, which contributes to its thickening, anti-caking, and light-diffusing properties. Depending on the processing method, fumed silica can be hydrophilic or hydrophobic, allowing it to adapt to a wide range of applications. Its semi-free flowing nature makes it easy to handle under controlled conditions, but it can also be prone to airborne dispersion if not properly contained.
+
+Fumed silica is notoriously difficult to handle due to its extremely light, fluffy nature and tendency to become airborne. It must be kept dry, as even slight moisture can cause it to clump, turn slimy, and become extremely heavy, complicating transport and processing. Fine particles create significant dust, which can pose respiratory hazards, making the use of dust collection systems and personal protective equipment essential. Additionally, its low moisture content and fine particle size make static discharge a real concern, requiring grounding, bonding, and other preventive measures to ensure safe handling.

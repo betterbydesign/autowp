@@ -1,0 +1,11 @@
+## Garnet
+
+**Material page name:** Garnet
+
+**Hero Description:** Garnet is a durable mineral commonly recognized as the red-hued birthstone for January, but it also occurs in several other colors. Its unique hardness and angular particle shape make it ideal for industrial applications such as waterjet cutting, abrasive blasting, and water filtration. Flexicon bulk material handling equipment is designed to transport, store, and process garnet safely and efficiently.
+
+**Overview:** Garnet is generally found inside metamorphic rock formed under high temperature and pressure, which produces its characteristic isometric crystals. Industrial garnet production primarily occurs in India, China, Australia, and the United States, while various types can be found worldwide. Crushing garnet for abrasive applications produces sharp, angular particles ideal for cutting and blasting. Its versatility extends to water filtration granules, abrasive powders, and surface finishing applications, making it a valuable material across multiple industries.
+
+**Characteristics and Challenges:** Garnet has a high hardness of 7.5 to 8.5 on the MOHS scale and is chemically inert, ensuring it does not react with the material it cuts or polishes. Abrasive garnet is classified into blasting grade, waterjet grade, and finer powders for polishing and lapping, with larger grains used for faster material removal and smaller grains for finer finishes. It has an average bulk density of 150 lbs/cu ft (2,406 kg/m³) and is generally free-flowing, though particles can damage equipment if they enter gears or valves.
+
+Handling garnet requires careful attention to maintain its shape, size, and purity, especially in abrasive applications where particle integrity is critical. Coarser particles tend to interlock, which can impede flow and slow processing, while finer particles may create dust that poses respiratory hazards. Wet garnet can clump, jam, or place excessive strain on conveying systems, so it must be kept dry during transport and storage. Additionally, garnet's hardness and angular shape can accelerate wear on equipment, making the selection of abrasion-resistant components essential for safe and efficient handling.

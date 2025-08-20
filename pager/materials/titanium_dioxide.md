@@ -1,0 +1,11 @@
+## Titanium Dioxide
+
+**Material page name:** Titanium Dioxide
+
+**Hero Description:** Titanium dioxide is a high-performance pigment used in a wide range of industries, from paints and plastics to cosmetics and construction materials. Flexicon bulk material handling systems are engineered to move titanium dioxide efficiently while minimizing dust, buildup, and product loss.
+
+**Overview:** Titanium dioxide (TiO₂), also known as titanium IV oxide or titania, is one of the whitest and most reflective substances known. It is widely used to enhance brightness and opacity in products such as paints, coatings, plastics, inks, and cosmetics. Its refractory nature also makes it valuable in protective coatings and optical applications. As one of the most-produced industrial chemicals globally, titanium dioxide plays a vital role in manufacturing and product performance across sectors.
+
+**Characteristics and Challenges:** Titanium dioxide is an odorless, white powder known for its cohesive, adhesive, and non-free-flowing nature. It tends to cake, pack, and smear, making it difficult to handle and prone to forming deposits in conveying systems. It is moderately abrasive and can coat steel surfaces. Titanium dioxide is incompatible with strong oxidizers, acids, and certain reactive metals, which may lead to hazardous reactions. Prolonged exposure should be avoided, as inhalation of dust can cause respiratory issues and skin dryness. There is also some evidence suggesting it may be carcinogenic. Safe storage requires a clean, dry environment away from heat, flames, and strong-smelling chemicals.
+
+Due to its poor flow characteristics, titanium dioxide can bridge or rat-hole in hoppers, potentially causing blockages and shutdowns. Specialized equipment such as spring-loaded bulk bag frames, bag activators, dust collectors, and pneumatic pulse filters are recommended to improve flow and minimize operator exposure. When unloading from smaller bags, a bag-breaking station with dust control features is ideal. For conveying, screws with wider, flatter surfaces are more effective. During bulk bag filling, vibratory densification decks and load cells help optimize capacity and maintain a dust-tight process. Proper design and dust containment are essential to ensure safe and efficient handling.

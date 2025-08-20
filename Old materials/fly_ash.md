@@ -1,0 +1,29 @@
+## Fly Ash
+
+**Material page name:** Fly Ash
+
+**Hero Description:** Fly ash is a byproduct of coal combustion used in cement and construction materials. Its lightweight and fine texture requires sealed conveying systems to minimize environmental contamination. Flexicon bulk material handling equipment is the ideal solution.
+
+**Overview:** Fly ash is the byproduct of pulverized coal that has been injected into the burning zone of a boiler. Upon reaching approximately 1500° C (2700°F), the non-combustible inorganic materials in the coal melt and fuse together as tiny molten droplets. These droplets are carried away from the burning zone by the flue gasses and then cool to form spherical glassy particles called fly ash. There are two main types of fly ash, Class C fly ash (produced by the burning of lignite or sub-bituminous coal) and Class F fly ash (produced by the burning of anthracite or bituminous coal). In the past, fly ash was released into the atmosphere, but local and regional pollution control standards now require that it is captured prior to release, usually by either mechanical or electrostatic separators. The collected fly ash is stored in silos for later disposal or beneficial re-uses.
+
+About 43% of the estimated 22 million tons (20 million metric tons) of fly ash produced each year in the United States is now recycled and used in a variety of engineering applications. Nearly two-thirds of this total is used to produce cement or concrete products. [More than 75% of all concrete processed now contains some fly ash](https://precast.org/blog/the-future-of-fly-ash-use-concrete/). Fly ash is a pozzolanic material, meaning that when mixed with water, it will develop cementitious properties. When used as a substitute for Portland cement in concrete, fly ash can be used as a replacement ranging from 20-35% of the cementitious material. Its advantages over Portland cement include increased resistance to alkali-silica reactions, decreased permeability and water demand. [Fly ash also costs nearly 60% less per ton/tonne than Portland cement](https://www.engr.psu.edu/ce/courses/ce584/concrete/library/materials/Altmaterials/Class%20C%20Fly%20Ash.htm).
+
+Other applications include [structural fills, road base/sub-base and waste stabilization/solidification procedures](https://www.fhwa.dot.gov/pavement/recycling/fach01.cfm). Bricks made from fly ash are cured via steam, as opposed to traditional bricks, which must be fired in a kiln. The steam curing uses over 80% less energy than the kiln-fired method and emits far less CO2. Fly ash is also found in common household items such as countertops, toothpaste, bowling balls, utensils, window frames and ceiling tiles.
+
+**Characteristics and Challenges:** Depending on the type of fuel burned and the amount of silica contained in it, fly ash can take on several physical forms. In general, fly ash particles are fine, cohesive, abrasive, and have a bulk density of 65 lb/ft³. Common challenges encountered when conveying fly ash include flooding, which could result in expensive and time-consuming spillage cleanup efforts; bridging, rat-holing, and convey line equipment wear, all of which require extensive shutdowns to repair. Fly ash is also aeratable, meaning the particles can become airborne and escape into the surrounding atmosphere. Consultation with an experienced material handling systems engineer is recommended when considering a fly ash conveying solution.
+
+### Selecting the Right Equipment for Pneumatic Conveyance
+
+If the fly ash is being pneumatically conveyed into a processing system, the blower used to move fly ash through the air line must be sized to meet the demands of the system. Due to the pozzolanic nature of fly ash, additional devices may be required to reduce the humidity levels or draw moisture from the fly ash prior to its entrance into the conveyor. Fly ash is best handled by the conveyance machinery gently so as not to become too aerated. If a flexible screw is being used to convey fly ash, a screw with a wider, flatter surface than the standard-sized screw is a recommended choice.
+
+### Dust-Tight Systems for Bulk Bag Unloading
+
+For fly ash being unloaded from bulk bags, a secure, dust-tight connection between the bag spout and the equipment inlet that creates a sealed system is recommended. Equipment purpose-built for flow promotion should be applied to aid in the full evacuation of fly ash from the bag. These include spring-loaded frames that stretch the top of the bag upward as it empties and elongates, causing fly ash to flow from the corners of the bag, and pneumatically actuated flow promotion devices that massage the bag and direct non-free-flowing fly ash into the bag spout. To prevent the escape of dust in the event of a leak and/or when incoming fly ash displaces air, the sealed system can be vented to a dust collector that puts the entire system under vacuum. This provides the added benefit of collapsing empty bags prior to tie-off and removal, preventing dust generated when empty bags are flattened manually.
+
+### Optimizing Feed Hoppers for Fly Ash
+
+Feed hoppers should be designed with proper geometry and may need to incorporate devices such as vibrators to aid in the densifying of this highly aeratable material. A hopper screen above the receiving vessel will help protect the operators if the fly ash is being dumped manually into a hopper that is equipped with agitating devices.
+
+### Efficiently Filling Bulk Bags with Fly Ash
+
+When filling bulk bags with fly ash, dust can be contained by making secure connections between the material feed source and the bulk bag filler inlet. The sealed system is vented to a filter sock or optional dust collection system to prevent displaced air and dust from entering the plant environment. The use of load cells and vibratory densification decks will greatly maximize the capacity of the bulk bags during the filling process.

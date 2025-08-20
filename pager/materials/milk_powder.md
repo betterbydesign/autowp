@@ -1,0 +1,11 @@
+## Milk Powder
+
+**Material page name:** Milk Powder
+
+**Hero Description:** Milk powder is a versatile dairy product made by removing water from milk, which extends shelf life and reduces the potential for microbial growth. It offers convenient storage and transportation, making it a cost-effective alternative to liquid milk for both industrial and consumer applications. Flexicon bulk material handling equipment is engineered to transport, store, and process milk powder efficiently and hygienically.
+
+**Overview:** Milk powder comes in several types, including whole milk powder (WMP), nonfat dry milk powder (NFDM), and skimmed milk powder (SMP), each with varying levels of protein, fat, and moisture. The defining characteristics include milkfat content (ranging from 1.5% to 40% on a milk-solids-not-fat basis) and moisture content (typically below 5%). SMP and NFDM are further defined by milk protein content, with SMP requiring a minimum of 34%. Milk powders are classified by heat treatment during manufacture, which influences solubility and determines their applications. Uses range from enhancing baked goods, chocolate, and ice cream to serving as an egg substitute, freshness aid, or component in infant formula. Milk powder also plays a critical role in humanitarian relief, emergency food storage, and outdoor activities.
+
+**Characteristics and Challenges:** Milk powders generally have a limited shelf life, with WMP remaining fresh for about six months and SMP lasting up to three years. The bulk density averages 35 lb/cu ft. Milk powder is aeratable, meaning air movement can cause it to become airborne as dust, and some types may fluidize, behaving like a liquid under certain conditions.
+
+Handling milk powder requires stringent hygienic standards. In the U.S., 3-A Sanitary Standards define equipment design, materials, and installation requirements for dairy processing. Highly processed powders, especially fat-enriched types, can leave residues in convey lines, creating hygiene risks and affecting product quality. Milk powders are prone to moisture uptake, causing clumping, and fat oxidation can produce off-flavors at elevated storage temperatures. Additionally, milk powder dust can be explosive, and bulk density may vary significantly between shipments.

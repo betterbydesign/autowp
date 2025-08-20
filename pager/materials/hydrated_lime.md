@@ -1,0 +1,11 @@
+## Hydrated Lime
+
+**Material page name:** Hydrated Lime
+
+**Hero Description:** Hydrated lime is a versatile, dry, colorless crystalline powder produced by treating calcium oxide with water. Flexicon bulk material handling equipment is designed to transport, store, and process hydrated lime safely and efficiently.
+
+**Overview:** Also known as slack lime, builder's lime, or pickling lime, hydrated lime is used in construction materials, mortars, plasters, paints, hard rubber products, and petrochemicals. It plays a critical role in steel production and other metals by removing impurities. Environmental applications, such as acid gas removal in energy plants, cement mills, and incinerators, are becoming increasingly important. Hydrated lime also stabilizes soils, raises the pH of acidic soils, and supports road, airfield, and foundation construction.
+
+**Characteristics and Challenges:** Hydrated lime is a soft, dry, colorless crystalline powder with a typical bulk density around 40 lb/ft³, though no two samples behave exactly alike. It can be somewhat sluggish, with a tendency to pack, smear, or bridge in storage and handling equipment. Some grades may contain abrasive crystals that can wear on conveying components, while others flow more freely but remain prone to flooding or sticking. Its physical properties, including particle size, moisture sensitivity, and cohesiveness, vary between batches, making careful equipment design and flow promotion essential for consistent handling and processing.
+
+Hydrated lime requires careful handling due to its reactive and corrosive nature. Exposure to moisture can trigger exothermic reactions, while airborne dust can contaminate surrounding areas and pose health risks to operators. Depending on the grade, hydrated lime may cause skin or eye irritation, and severe inhalation exposure can lead to lung damage or other serious health effects. In storage and handling equipment, hydrated lime can bridge, rat-hole, or flood, while sticking to container walls or building up inside convey lines. Maintaining airtight connections, dust containment, and proper flow promotion devices is critical to protect personnel, preserve product quality, and ensure reliable material flow.
