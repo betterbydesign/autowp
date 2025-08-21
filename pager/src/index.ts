@@ -21,67 +21,104 @@ interface Material {
     characteristicsAndChallenges: string;
 }
 
-function parseMarkdownFile(filePath: string): { credentials: LoginCredentials; materials: Material[] } {
+function parseLoginCredentials(filePath: string): LoginCredentials {
     const content = fs.readFileSync(filePath, 'utf-8');
     const lines = content.split('\n');
     
     let credentials: LoginCredentials = { url: '', username: '', password: '' };
-    const materials: Material[] = [];
-    let currentMaterial: Partial<Material> = {};
-    let currentSection = '';
-    let inMaterialSection = false;
+    
+    for (const line of lines) {
+        const trimmedLine = line.trim();
+        
+        if (trimmedLine.startsWith('**URL:**')) {
+            credentials.url = trimmedLine.replace('**URL:**', '').trim();
+        } else if (trimmedLine.startsWith('**User:**')) {
+            credentials.username = trimmedLine.replace('**User:**', '').replace(/`/g, '').trim();
+        } else if (trimmedLine.startsWith('**Pass:**')) {
+            credentials.password = trimmedLine.replace('**Pass:**', '').replace(/`/g, '').trim();
+        }
+    }
+    
+    return credentials;
+}
+
+function parseMaterialFile(filePath: string): Material {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const lines = content.split('\n');
+    
+    let material: Partial<Material> = {};
+    let currentContent = '';
+    let currentField = '';
     
     for (let i = 0; i < lines.length; i++) {
-        const line = lines[i]?.trim() || '';
+        const line = lines[i] || '';
+        const trimmedLine = line.trim();
         
-        // Stop processing if we hit the ##stop marker
-        if (line === '##stop') {
-            break;
-        }
-        
-        // Parse login credentials
-        if (line.startsWith('**URL:**')) {
-            credentials.url = line.replace('**URL:**', '').trim();
-        } else if (line.startsWith('**User:**')) {
-            credentials.username = line.replace('**User:**', '').replace(/`/g, '').trim();
-        } else if (line.startsWith('**Pass:**')) {
-            credentials.password = line.replace('**Pass:**', '').replace(/`/g, '').trim();
-        }
-        
-        // Parse material sections
-        else if (line.startsWith('## ') && !line.includes('Login Credentials') && !line.includes('stop')) {
-            // Save previous material if exists
-            if (currentMaterial.name) {
-                materials.push(currentMaterial as Material);
+        if (trimmedLine.startsWith('## ')) {
+            material.name = trimmedLine.replace('## ', '').trim();
+        } else if (trimmedLine.startsWith('**Material page name:**')) {
+            material.pageName = trimmedLine.replace('**Material page name:**', '').trim();
+        } else if (trimmedLine.startsWith('**Hero Description:**')) {
+            currentField = 'heroDescription';
+            currentContent = trimmedLine.replace('**Hero Description:**', '').trim();
+        } else if (trimmedLine.startsWith('**Overview:**')) {
+            // Save previous field if exists
+            if (currentField && currentContent) {
+                (material as any)[currentField] = currentContent.trim();
             }
-            
-            // Start new material
-            currentMaterial = {
-                name: line.replace('## ', '').trim()
-            };
-            inMaterialSection = true;
-        }
-        
-        // Parse material properties
-        else if (inMaterialSection) {
-            if (line.startsWith('**Material page name:**')) {
-                currentMaterial.pageName = line.replace('**Material page name:**', '').trim();
-            } else if (line.startsWith('**Hero Description:**')) {
-                currentMaterial.heroDescription = line.replace('**Hero Description:**', '').trim();
-            } else if (line.startsWith('**Overview:**')) {
-                currentMaterial.overview = line.replace('**Overview:**', '').trim();
-            } else if (line.startsWith('**Characteristics and Challenges:**')) {
-                currentMaterial.characteristicsAndChallenges = line.replace('**Characteristics and Challenges:**', '').trim();
+            currentField = 'overview';
+            currentContent = trimmedLine.replace('**Overview:**', '').trim();
+        } else if (trimmedLine.startsWith('**Characteristics and Challenges:**')) {
+            // Save previous field if exists
+            if (currentField && currentContent) {
+                (material as any)[currentField] = currentContent.trim();
             }
+            currentField = 'characteristicsAndChallenges';
+            currentContent = trimmedLine.replace('**Characteristics and Challenges:**', '').trim();
+        } else if (currentField && trimmedLine) {
+            // Continue building the current field content
+            currentContent += (currentContent ? ' ' : '') + trimmedLine;
         }
     }
     
-    // Add the last material if exists
-    if (currentMaterial.name) {
-        materials.push(currentMaterial as Material);
+    // Save the last field
+    if (currentField && currentContent) {
+        (material as any)[currentField] = currentContent.trim();
     }
     
-    return { credentials, materials };
+    // Validate required fields
+    if (!material.name) {
+        throw new Error(`Material file ${filePath} is missing a name (## heading)`);
+    }
+    
+    return material as Material;
+}
+
+function loadAllMaterials(materialsDir: string): Material[] {
+    const materials: Material[] = [];
+    
+    try {
+        const files = fs.readdirSync(materialsDir);
+        const mdFiles = files.filter(file => file.endsWith('.md'));
+        
+        console.log(`📁 Found ${mdFiles.length} material files in ${materialsDir}`);
+        
+        for (const file of mdFiles) {
+            try {
+                const filePath = path.join(materialsDir, file);
+                const material = parseMaterialFile(filePath);
+                materials.push(material);
+                console.log(`✅ Loaded material: ${material.name}`);
+            } catch (error) {
+                console.error(`❌ Error parsing material file ${file}: ${error}`);
+            }
+        }
+    } catch (error) {
+        console.error(`❌ Error reading materials directory ${materialsDir}: ${error}`);
+        throw error;
+    }
+    
+    return materials;
 }
 
 function getImageSearchTerm(materialName: string): string {
@@ -172,11 +209,14 @@ async function processMaterial(agent: any, material: Material): Promise<void> {
             })
         );
         
+        let isEditingExisting = false;
+        
         if (searchResults.materialExists) {
             console.log(`📝 Found existing material, editing: ${material.name}`);
             
             // Hover over material name and click Edit button
             await agent.act('Hover over the material name in search results list and click the Edit button that appears below the title');
+            isEditingExisting = true;
             
         } else {
             console.log(`➕ Material not found, creating new: ${material.name}`);
@@ -185,10 +225,15 @@ async function processMaterial(agent: any, material: Material): Promise<void> {
             await agent.act('Click "Add new material" from the sidebar menu');
         }
         
-        // Fill in the material information
-        await agent.act('Fill in the post title', { 
-            data: { title: material.pageName || material.name }
-        });
+        // Fill in the post title only if creating a new material
+        if (!isEditingExisting) {
+            console.log(`📝 Setting post title for new material: ${material.name}`);
+            await agent.act('Fill in the post title', { 
+                data: { title: material.pageName || material.name }
+            });
+        } else {
+            console.log(`⏭️  Skipping title update for existing material: ${material.name}`);
+        }
         
         // Fill custom field meta boxes with material data
         if (material.heroDescription) {
@@ -209,9 +254,24 @@ async function processMaterial(agent: any, material: Material): Promise<void> {
             });
         }
         
-        // Set featured image from media gallery
-        console.log(`🖼️  Setting featured image from media gallery for: ${material.name}`);
-        await setFeaturedImageFromGallery(agent, material.name);
+        // Check if featured image already exists and set one if needed
+        console.log(`🖼️  Checking featured image status for: ${material.name}`);
+        
+        const featuredImageStatus = await agent.extract(
+            'Is there already a featured image set for this post? Look for a featured image preview or "Set featured image" button text.',
+            z.object({
+                hasFeaturedImage: z.boolean(),
+                imageDescription: z.string().optional()
+            })
+        );
+        
+        if (featuredImageStatus.hasFeaturedImage) {
+            console.log(`✅ Featured image already exists for: ${material.name}`);
+            console.log(`⏭️  Skipping featured image step`);
+        } else {
+            console.log(`📷 No featured image found, setting one from media gallery for: ${material.name}`);
+            await setFeaturedImageFromGallery(agent, material.name);
+        }
         
         // Save/publish the post
         await agent.act('Save and publish the post');
@@ -227,13 +287,18 @@ async function processMaterial(agent: any, material: Material): Promise<void> {
 async function main() {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    const materialsFilePath = path.join(__dirname, '..', 'materials_list.md');
+    const credentialsFilePath = path.join(__dirname, '..', 'login_credentials.md');
+    const materialsDir = path.join(__dirname, '..', 'materials');
     
     console.log('🚀 Starting WordPress Material Automation...');
     
-    // Parse the materials list
-    console.log('📄 Parsing materials list...');
-    const { credentials, materials } = parseMarkdownFile(materialsFilePath);
+    // Parse login credentials
+    console.log('🔐 Loading login credentials...');
+    const credentials = parseLoginCredentials(credentialsFilePath);
+    
+    // Load all materials from individual files
+    console.log('📄 Loading materials from individual files...');
+    const materials = loadAllMaterials(materialsDir);
     
     console.log(`Found ${materials.length} materials to process`);
     console.log(`WordPress URL: ${credentials.url}`);

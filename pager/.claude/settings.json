@@ -1,0 +1,11 @@
+{
+  "model": "claude-sonnet-4-20250514",
+  "statusLine": {
+    "type": "command", 
+    "command": "input=$(cat); current_dir=$(echo \"$input\" | jq -r '.workspace.current_dir'); model_name=$(echo \"$input\" | jq -r '.model.display_name'); cd \"$current_dir\" 2>/dev/null && branch=$(git branch --show-current 2>/dev/null) && printf \"$(whoami)@$(hostname -s):$(basename \"$current_dir\")${branch:+ ($branch)} [$model_name]\" || printf \"$(whoami)@$(hostname -s):$(basename \"$current_dir\") [$model_name]\""
+  },
+  "permissions": {
+    "allowedTools": ["*"],
+    "allowedPaths": ["**/*"]
+  }
+}

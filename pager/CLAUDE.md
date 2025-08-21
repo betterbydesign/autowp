@@ -1,100 +1,82 @@
-# WordPress Material Automation Project Instructions
+# WordPress Material Automation Project
 
 ## Project Summary
-You are building an automation using Magnitude (a visual browser agent built on Playwright) that reads material information from a local markdown file and automatically creates/updates WordPress custom posts. The automation should:
+This automation uses Magnitude (a visual browser agent built on Playwright) to read material information from individual markdown files and automatically creates/updates WordPress custom posts. The automation:
 
-1. **Read local data**: Parse `materials_list.md` file containing material information and login credentials
-2. **WordPress automation**: Navigate to WordPress dashboard, login, and access material custom post type editor
-3. **Data entry**: Fill custom field meta boxes with information from the markdown file  
-4. **Image upload**: Upload matching material images as featured images
-5. **Batch processing**: Continue processing materials until reaching `##stop` marker in the markdown
-6. **Error handling**: Handle login failures, missing images, and other edge cases gracefully
+1. **Reads local data**: Parses individual material files in the `materials/` folder and login credentials from `login_credentials.md`
+2. **WordPress automation**: Navigates to WordPress dashboard, logs in, and accesses material custom post type editor
+3. **Data entry**: Fills custom fields in the "Material Data" section of the WordPress UI
+4. **Image management**: Sets featured images from the WordPress media gallery
+5. **Batch processing**: Processes all materials in the materials folder
+6. **Error handling**: Handles login failures, missing images, and other edge cases gracefully
 
 ## Current Project Structure
 ```
 project-root/
 ├── src/
-│   └── index.ts          # Main automation script (MODIFY THIS)
-├── materials_list.md     # Material data and credentials (READ THIS)
-├── images/              # Material images folder (REFERENCE THESE)
-│   ├── material-1.jpg
-│   ├── material-2.png
-│   └── [other images]
-└── [magnitude example files]
+│   └── index.ts              # Main automation script
+├── login_credentials.md      # WordPress login credentials
+├── materials/                # Individual material markdown files
+│   ├── carbon_black.md
+│   ├── citric_acid.md
+│   ├── flour.md
+│   └── [other material files]
+├── images/                   # Material images for reference
+│   ├── carbon-black_LG.png
+│   ├── citric-acid_LG.png
+│   └── [other material images]
+└── [other project files]
 ```
 
 ## Technical Requirements
 
-### Research Phase
-1. **Use "context7" MCP servers** to look up documentation for:
-   - Magnitude framework capabilities and syntax
-   - Playwright file system operations (reading local files)
-   - Playwright file upload methods
-   - Best practices for combining both tools
+## How It Works
 
-### Implementation Steps
+### File Processing
+1. **Login Credentials**: Reads WordPress URL, username, and password from `login_credentials.md`
+2. **Material Data**: Processes all `.md` files in the `materials/` folder
+3. **Material Structure**: Each material file contains:
+   - Material name (from `## heading`)
+   - Material page name
+   - Hero Description
+   - Overview
+   - Characteristics and Challenges
 
-#### Step 1: File System Setup
-- Modify `src/index.ts` to read and parse `materials_list.md`
-- Extract login credentials from the markdown file
-- Parse material sections (name, description, properties, etc.)
-- Create a function to find matching image files in the `images/` folder
-- Stop processing when encountering `##stop` marker
+### WordPress Automation
+1. **Login**: Uses Magnitude to log into WordPress admin
+2. **Material Management**: 
+   - Searches for existing materials first
+   - Creates new materials or edits existing ones
+   - Fills custom fields in the "Material Data" section of the WordPress UI
+3. **Image Handling**: Sets featured images by searching the WordPress media gallery
+4. **Publishing**: Saves and publishes each material post
 
-#### Step 2: WordPress Login Automation
-- Use Magnitude's vision-based approach to navigate to WordPress admin login
-- Extract and use login credentials from the markdown file
-- Handle login success/failure scenarios
-- Navigate to the material custom post type area
+## Material File Structure
+Each material file follows this format:
+```markdown
+## Material Name
 
-#### Step 3: Material Processing Loop
-For each material in the list:
-- Navigate to "Add New Material" or edit existing material post
-- Fill custom field meta boxes with data from markdown:
-  - Material name/title
-  - Description
-  - Properties/specifications
-  - Any other custom fields found in the markdown
-- Upload corresponding image file as featured image
-- Save/publish the post
-- Move to next material
+**Material page name:** Display Name
 
-#### Step 4: Error Handling & Logging
-- Log successful material uploads
-- Handle missing image files gracefully
-- Retry failed operations with reasonable limits
-- Provide clear status updates during execution
+**Hero Description:** Brief description for hero section
 
-### Key Technical Considerations
+**Overview:** Detailed overview paragraph(s)
 
-1. **File Reading**: Use Node.js `fs` module to read local markdown and scan images directory
-2. **Markdown Parsing**: Parse structured sections between materials (likely using heading markers)
-3. **Image Matching**: Match material names to image filenames (handle different extensions)
-4. **Magnitude Syntax**: Use natural language commands where possible, fall back to Playwright selectors when needed
-5. **WordPress Specifics**: Handle WordPress admin interface, custom post types, meta boxes, and media uploads
+**Characteristics and Challenges:** Technical details and handling challenges
+```
 
-### Expected Markdown Structure
-The `materials_list.md` likely contains:
-- WordPress login credentials at the top
-- Material sections with headings (## Material Name)
-- Material properties/descriptions under each heading
-- `##stop` marker to end processing
+## Key Features
+- **Intelligent Search**: Checks for existing materials before creating new ones
+- **Media Gallery Integration**: Searches and sets featured images from existing WordPress media
+- **Material Data Section**: Specifically targets the "Material Data" custom fields section in WordPress
+- **Error Handling**: Continues processing other materials if one fails
+- **Logging**: Detailed console output showing progress and results
 
-### Deliverables
-- Modified `src/index.ts` with complete automation
-- Proper error handling and logging
-- Comments explaining key sections
-- Instructions for running the automation
-
-## Execution Instructions
-
-1. First, examine `materials_list.md` to understand the data structure
-2. Look at existing files in `images/` folder to understand naming conventions
-3. Research Magnitude and Playwright documentation using "context7"
-4. Implement the automation step by step, testing each component
-5. Ensure the script can run independently and process all materials until `##stop`
-
-Start by examining the current project files and researching the required documentation before implementing the solution.
+## Running the Automation
+1. Ensure `login_credentials.md` contains valid WordPress credentials
+2. Add material files to the `materials/` folder
+3. Run: `npm start` or `node src/index.ts`
+4. The automation will process all materials and provide a summary report
 
 ## Magnitude Overview
 
